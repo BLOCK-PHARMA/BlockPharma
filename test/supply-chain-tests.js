@@ -29,10 +29,10 @@ contract("ProductManagement", accounts => {
         }
     );
 
-    it("should create a car using 6 parts and store it", async () => {
+    it("should create a car using 3 parts and store it", async () => {
         //First, create the car parts
-        const serial_numbers = ["123456", "123457", "123458", "123459", "123450", "123451"]
-        const part_types = ["wheel", "wheel", "wheel", "wheel", "engine", "transmission"]
+        const serial_numbers = ["123456", "123457", "123458"]
+        const part_types = ["wheel", "engine", "transmission"]
         const creation_date = "12/12/18"
         let part_array = []
 

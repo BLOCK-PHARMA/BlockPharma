@@ -13,7 +13,7 @@ contract ProductManagement {
         string serial_number;
         string product_type;
         string creation_date;
-        bytes32[6] parts;
+        bytes32[] parts;
     }
 
     mapping(bytes32 => Part) public parts;
@@ -62,9 +62,10 @@ contract ProductManagement {
         return part_hash;
     }
 
-    function buildProduct(string memory serial_number, string memory product_type, string memory creation_date, bytes32[6] memory part_array) public returns (bytes32){
+    function buildProduct(string memory serial_number, string memory product_type, string memory creation_date, bytes32[] memory part_array) public returns (bytes32){
         //Check if all the parts exist, hash values and add to product mapping.
         uint i;
+	require(part_array.length >= 1, "no drugs in order");
         for(i = 0;i < part_array.length; i++){
             require(parts[part_array[i]].manufacturer != address(0), "Inexistent part used on product");
         }
@@ -79,7 +80,7 @@ contract ProductManagement {
         return product_hash;
     }
 
-    function getParts(bytes32 product_hash) public returns (bytes32[6] memory){
+    function getParts(bytes32 product_hash) public returns (bytes32[] memory){
         //The automatic getter does not return arrays, so lets create a function for that
         require(products[product_hash].manufacturer != address(0), "Product inexistent");
         return products[product_hash].parts;

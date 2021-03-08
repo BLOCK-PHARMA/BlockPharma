@@ -22,7 +22,7 @@
  *
  */
 
-// const HDWallet = require('truffle-hdwallet-provider');
+ const HDWalletProvider= require('truffle-hdwallet-provider');
 // const infuraKey = "fj4jll3k.....";
 //
 // const fs = require('fs');
@@ -50,7 +50,17 @@ module.exports = {
      host: "127.0.0.1",     // Localhost (default: none)
      port: 8545,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
-    }
+    },
+ropsten: {
+    	  provider: function() {
+		    var mnemonic = "palace hurt poverty submit hand alone goddess cinnamon fame finger scrap piece";//put ETH wallet 12 mnemonic code	
+		    return new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/14bea28ecbaa4b41ac5beb93869321de");
+		  },
+        gas: 8000000,
+        gasPrice: 60000000000,
+		  network_id: '3'
+		  // from: '0xab0874cb61d.....',/*ETH wallet 12 mnemonic code wallet address*/
+		},
 
     // Another network with more advanced options...
     // advanced: {

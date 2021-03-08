@@ -8,12 +8,12 @@ window.onload = async function () {
         console.log("Create Part")
         // Get required data and create part on blockchain using web3
 
-        var serial = document.getElementById("create-serial-number").value
-        var part_type = document.getElementById("create-part-type").value
+        var serial = document.getElementById("create-serial-number").value;
+        var part_type = document.getElementById("create-part-type").value;
 
         var creation_date = format_date()
         console.log("Serial: " + serial + " Date:" + creation_date + "Part Type: " + part_type)
-
+	    console.log(web3.utils.fromAscii(serial))
         //Create part hash and send information to blockchain
         var part_sha = web3.utils.soliditySha3(window.accounts[0], web3.utils.fromAscii(serial),
             web3.utils.fromAscii(part_type), web3.utils.fromAscii(creation_date))

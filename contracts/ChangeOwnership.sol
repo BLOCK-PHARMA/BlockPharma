@@ -20,7 +20,7 @@ contract ProductManagement{
     mapping(bytes32 => Part) public parts;
     mapping(bytes32 => Product) public products;
 
-    function getParts(bytes32 product_hash) public returns (bytes32[6] memory) {}
+    function getParts(bytes32 product_hash) public returns (bytes32[] memory) {}
 }
 
 contract ChangeOwnership {
@@ -67,7 +67,7 @@ contract ChangeOwnership {
             currentProductOwner[p_hash] = to;
             emit TransferProductOwnership(p_hash, to);
             //Change part ownership too
-            bytes32[6] memory part_list = pm.getParts(p_hash);
+            bytes32[] memory part_list = pm.getParts(p_hash);
             for(uint i = 0; i < part_list.length; i++){
                 currentPartOwner[part_list[i]] = to;
                 emit TransferPartOwnership(part_list[i], to);

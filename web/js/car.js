@@ -36,6 +36,7 @@ window.onload = async function () {
             //Then the parts that will be present on the car
             var part_list = getMultipleActivePart()
             var part_array = []
+            if(part_list.length > 0){
             for (var i = 0; i < part_list.length; i++) {
                 part_array.push(part_list[i].textContent)
             }
@@ -68,7 +69,7 @@ window.onload = async function () {
                     }
                 }
             })
-        }
+        }}
     })
 
     document.getElementById("car-change-ownership-btn").addEventListener("click", function () {

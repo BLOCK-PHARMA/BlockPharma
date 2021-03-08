@@ -187,17 +187,19 @@ function getMultipleActivePart() {
 }
 
 async function init_web3() {
-    //Web3 init
-    if (typeof web3 != 'undefined') {
-        web3 = new Web3(web3.currentProvider) // what Metamask injected 
-    } else {
+  	if (window.ethereum) {
+    		window.web3 = new Web3(window.ethereum);
+    		await window.ethereum.enable();
+		console.log("injecting metamask")
+	} else {
         // Instantiate and set Ganache as your provider
         web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+        console.log("RPC from localhost")
     }
     //Load accounts
     window.accounts = await web3.eth.getAccounts()
     console.log("Loaded accounts")
-
+    console.log(window.accounts[0])
     // The interface definition for your smart contract (the ABI) 
     window.pm = new web3.eth.Contract([
         {
@@ -316,7 +318,7 @@ async function init_web3() {
                 },
                 {
                     "name": "part_array",
-                    "type": "bytes32[6]"
+                    "type": "bytes32[]"
                 }
             ],
             "name": "buildProduct",
@@ -343,7 +345,7 @@ async function init_web3() {
             "outputs": [
                 {
                     "name": "",
-                    "type": "bytes32[6]"
+                    "type": "bytes32[]"
                 }
             ],
             "payable": false,
@@ -353,7 +355,7 @@ async function init_web3() {
         }
     ])
 
-    window.pm.options.address = '0xE5987169978243A040fba66245E982D884108A70'
+    window.pm.options.address = '0x66c36Da9fFaE1c122Fe58bDe162B0E1a22C40270'
 
     window.co = new web3.eth.Contract([
         {
@@ -497,7 +499,7 @@ async function init_web3() {
             "signature": "0xac814490"
         }
     ])
-    window.co.options.address = "0x5F064EDfd972D3Cd9A129b8DFE96Ea7fEe5Dd000"
+    window.co.options.address = '0x558910f8dB6FBAE967Cfae12064C7Ef7d403B6ad'
 }
 
 async function getOwnerHistoryFromEvents(event, p_hash) {
