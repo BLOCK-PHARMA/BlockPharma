@@ -565,6 +565,7 @@ function dealerProductListManager() {
         clearOwnerDetails()
     }
 }
+
 export {
     toggleActive, clearActiveExcept, populateDetails, populateCarDetails, clearDetails,
     clearCarDetails, partListManager, carPartListManager, carListManager, addItemToList,
