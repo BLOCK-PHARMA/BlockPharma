@@ -355,7 +355,7 @@ async function init_web3() {
         }
     ])
 
-    window.pm.options.address = '0x66c36Da9fFaE1c122Fe58bDe162B0E1a22C40270'
+    window.pm.options.address = '0x0Cd06B43dd9BC5CEbE0344BDD61B2e086FD4e7f1'
 
     window.co = new web3.eth.Contract([
         {
@@ -499,7 +499,7 @@ async function init_web3() {
             "signature": "0xac814490"
         }
     ])
-    window.co.options.address = '0x558910f8dB6FBAE967Cfae12064C7Ef7d403B6ad'
+    window.co.options.address = '0xA4324eA5ACcA06CC9378467CEe9445641890D75A'
 }
 
 async function getOwnerHistoryFromEvents(event, p_hash) {
