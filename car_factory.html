@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Chain Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.33/dist/web3.min.js"></script>
+    <script type="module" src="./js/car.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="teal">
+            <div class="nav-wrapper">
+                <!-- <a href="#" class="brand-logo right">Logo</a> -->
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="index.html">Manufacturer</a></li>
+                    <li><a href="car_factory.html">Wholesaler</a></li>
+                    <li><a href="dealer.html">Retailer</a></li>
+                </ul>
+            </div>
+        </nav>
+        <h2>Wholesaler</h2>
+        <div class="row">
+            <div class="col s6">
+                <label>Address: </label>
+                <p id="car-factory-address">0xcE94908BFF18F5D0a58042325e73Ca3caF8285cE</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <div id="car-part-list" class="collection with-header">
+                    <p class="collection-header">Drugs Owned</p>
+                </div>
+            </div>
+            <div class="col s6">
+                <label>Serial Number: </label><input type="number" id="create-car-serial-number" placeholder="Order Serial Number">
+                <button id="build-car" class="waves-effect waves-light btn">Create Order</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <div id="car-list" class="collection with-header">
+                    <p class="collection-header">Orders Created</p>
+                </div>
+            </div>
+            <div class="col s6">
+                <div id="car-list-details">
+                    <label>Manufacturer Address:</label>
+                    <p id="car-details-address"></p>
+                    <label>Serial Number:</label>
+                    <p id="car-details-serial-num"></p>
+                    <label>Drugs:</label>
+                    <p id="car-details-parts"></p>
+                    <label>Creation Date:</label>
+                    <p id="car-details-creation-date"></p>
+                    <input id="car-change-ownership-input" type="text" placeholder="Insert address">
+                    <button id="car-change-ownership-btn" class="waves-effect waves-light btn">Change Ownership</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
