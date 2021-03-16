@@ -79,7 +79,7 @@ auth.onAuthStateChanged(function(user){
         
     }else{
         
-        alert("No Active User");
+        //alert("No Active User");
         //no user is signed in
     }
     
