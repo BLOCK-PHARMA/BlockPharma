@@ -9,6 +9,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.33/dist/web3.min.js"></script>
     <script type="module" src="./js/parts.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+
+    <script src= "logout-page.js"></script>
 </head>
 
 <body>
@@ -17,9 +22,11 @@
             <div class="nav-wrapper">
                 <!-- <a href="#" class="brand-logo right">Logo</a> -->
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li><a href="index.html">Manufacturer</a></li>
+                    <li><a href="index1.html">Manufacturer</a></li>
                     <li><a href="car_factory.html">WholeSaler</a></li>
                     <li><a href="dealer.html">Retailer</a></li>
+                    <!-- <li><a href="index.html">Sign Out</a></li> -->
+                    <button onclick="signOut()" id="signOut" style="background-color: teal;position:absolute; top:0; right:0;">Sign Out</button>
                 </ul>
             </div>
         </nav>
@@ -32,7 +39,7 @@
         </div>
         <div class="row">
             <div class="col s12">
-                <label>Serial Number: </label><input type="text" id="create-serial-number" placeholder="Drug Serial Number">
+                <label>Serial Number: 14515 </label><input type="text" id="create-serial-number" placeholder="Drug Serial Number">
                 <label>Drug Type: </label>
                 <select id="create-part-type" class="browser-default">
                     <option>Caffeine</option>
