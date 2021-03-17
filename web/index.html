@@ -1,29 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <title> Block Pharma Login Page</title>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="login-page.css">
-  <script defer src="login-page.js"></script>
-</head>
+    <script src= "login-page.js"></script>
+  </head>
 
-<body>
-  <main id="main-holder">
-    <h1 id="login-header">Login</h1>
-    
-    <div id="login-error-msg-holder">
-      <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+  <body>
+    <h1> Login Page </h1>
+    <div id="formContainer">
+      <div id="header"> </div>
+      <input type="email" placeholder="Email" id="email"/>
+      <input type="password" placeholder="Password" id="password"/>
+
+      <button onclick="signUp()" id="signUp">Sign Up</button> 
+      <button onclick="signIn()" id="signIn">Sign In</button>
+      <button onclick="signOut()" id="signOut">Sign Out</button>
+
     </div>
-    
-    <form id="login-form">
-      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
-      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
-      <input type="submit" value="Login" id="login-form-submit">
-    </form>
-  
-  </main>
-</body>
+  </body>
 
+  <style>
+    body{
+      background-color: #81ecec;
+
+    }
+    h1{
+      background-color: #ff4d4d;
+      margin: 100px auto;
+      text-align: center;
+      color: white;
+    }
+
+    #formContainer{
+      background-color: white;
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+
+      width: 25%;
+      height: 45%;
+      margin: 10px auto;
+    }
+
+    #header{
+      width: 100%;
+      height: 10px;
+      background: black;;
+    }
+
+    #email{
+      text-align: center;
+      width: 70%;
+      height: 40px;
+      display: black;
+      margin-top: 20px;
+      margin-left: 54px;
+      border: none;
+      outline: none;
+      border-bottom: 2px solid black;
+    }
+
+    #password{
+      text-align: center;
+      width: 70%;
+      height: 40px;
+      display: black;
+      margin-top: 20px;
+      margin-left: 54px;
+      border: none;
+      outline: none;
+      border-bottom: 2px solid black;
+    }
+
+    #signUp{
+      background-color: #ff4d4d;
+      color: white;
+      font-weight: bold;
+      padding: 15px 32px;
+      border-radius: 10px;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      font-size: 13px;
+      margin-top: 20px;
+      margin-left: 80px;
+      border: none;
+    }
+
+    #signIn{
+      background-color: #32ff7e;
+      color: white;
+      font-weight: bold;
+      padding: 15px 32px;
+      border-radius: 10px;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      font-size: 13px;
+      border: none;
+    }
+
+    #signOut{
+      background-color: #fffa65;
+      color: black;
+      font-weight: bold;
+      padding: 10px 32px;
+      border-radius: 10px;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      font-size: 13px;
+      border: none;
+      margin-top: 12px;
+      margin-left: 135px;
+    }
+
+    button:hover{
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19) ;
+    }
+
+  </style>
 </html>
